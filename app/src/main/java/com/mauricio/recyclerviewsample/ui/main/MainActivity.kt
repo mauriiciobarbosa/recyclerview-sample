@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity(), QuoteActionListener {
         })
     }
 
+
     private fun getLayoutManager(listType: ListType): RecyclerView.LayoutManager = when (listType) {
         ListType.LIST -> LinearLayoutManager(this)
         ListType.GRID -> GridLayoutManager(this, 2)
@@ -86,7 +87,11 @@ class MainActivity : AppCompatActivity(), QuoteActionListener {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onCopyQuote(quote: Quote) = viewModel.copyQuote(quote)
+    override fun onCopyQuote(quote: Quote) {
+        viewModel.copyQuote(quote)
+    }
 
-    override fun onDeleteQuote(quote: Quote) = viewModel.deleteQuote(quote)
+    override fun onDeleteQuote(quote: Quote) {
+        viewModel.deleteQuote(quote)
+    }
 }

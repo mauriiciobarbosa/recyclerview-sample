@@ -1,5 +1,7 @@
 package com.mauricio.recyclerviewsample.ui.main
 
+import android.support.v7.recyclerview.extensions.ListAdapter
+import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -20,12 +22,11 @@ import kotlinx.android.synthetic.main.item_line_view.view.quote_title as quoteTi
  * Created by mauricio on 07/05/18.
  */
 class QuoteAdapter(private val listType: ListType,
-                   private val listener: QuoteActionListener) : RecyclerView.Adapter<QuoteAdapter.QuoteViewHolder>() {
+                   private val listener: QuoteActionListener)
+    : ListAdapter<Quote, QuoteAdapter.QuoteViewHolder>(DiffCallback()) {
 
-    private lateinit var items: List<Quote>
-
-    fun setItems(items: List<Quote>) {
-        this.items = items
+    fun setItems(newItems: List<Quote>) {
+        submitList(newItems)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuoteViewHolder {
@@ -39,10 +40,8 @@ class QuoteAdapter(private val listType: ListType,
     }
 
     override fun onBindViewHolder(holder: QuoteViewHolder, position: Int) {
-        holder.bind(items[position], listener)
+        holder.bind(getItem(position), listener)
     }
-
-    override fun getItemCount() = items.size
 
     sealed class QuoteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

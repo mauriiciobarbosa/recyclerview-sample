@@ -2,19 +2,19 @@ package com.mauricio.recyclerviewsample.data.source
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Transformations
+import android.arch.lifecycle.Transformations.map
 import android.content.Context
 import com.mauricio.recyclerviewsample.R
 import com.mauricio.recyclerviewsample.data.ListType
 import com.mauricio.recyclerviewsample.data.Listing
 import com.mauricio.recyclerviewsample.data.Quote
 
-class QuotesRepository(private val context: Context) {
+class QuotesRepository(context: Context) {
 
     private val inMemory = InMemoryDataSource()
 
-    val quotes = MutableLiveData<List<Quote>>()
+    private val quotes = MutableLiveData<List<Quote>>()
     private val preferencesListType = PreferencesLiveData(context, context.getString(R.string.key_layout_manager), "1")
-    private val listType = Transformations.map(preferencesListType, { ListType.getById(it) })!!
 
     init {
         quotes.value = inMemory.bulkQuotes()
@@ -22,7 +22,7 @@ class QuotesRepository(private val context: Context) {
 
     fun bulkQuotes(): Listing {
         return Listing(quotes = quotes,
-                listType = listType)
+                listType = map(preferencesListType) { ListType.getById(it) })
     }
 
     fun generateNewQuote() {
