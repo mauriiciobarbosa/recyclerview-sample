@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="title_show_actions">Copy/Delete Actions</string>
+    <string name="slide_to_show_actions">Swipe left to show actions</string>
+    <string name="title_layout_manager">Layout Manager</string>
+    <string name="summary_layout_manager">Specify layout manager for RecyclerView</string>
+    <string name="title_item_animator">Item Animator</string>
+    <string name="summary_item_animator">Specify a item animator for RecyclerView</string>
+    <string name="title_item_decoration">Item Decoration</string>
+    <string name="summary_item_decoration">Select a item decoration for RecyclerView</string>
+    <string name="pref_title_recycler_view">RecyclerView Configuration</string>
+    <string name="key_slide_actions">key_slide_action</string>
+    <string name="key_gallery_name">key_gallery_name</string>
+    <string name="key_layout_manager">key_layout_manager</string>
+    <string name="key_item_animator">key_item_animator</string>
+    <string name="key_item_decoration">key_item_decorationr</string>
+</resources>

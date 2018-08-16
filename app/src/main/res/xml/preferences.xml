@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="General">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/key_slide_actions"
+            android:summary="@string/slide_to_show_actions"
+            android:title="@string/title_show_actions" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_recycler_view">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/title_layout_manager"
+            android:entries="@array/pref_layout_manager_entries"
+            android:entryValues="@array/pref_layout_manager_values"
+            android:key="@string/key_layout_manager"
+            android:summary="@string/summary_layout_manager"
+            android:title="@string/title_layout_manager" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/title_item_animator"
+            android:entries="@array/pref_item_animator_entries"
+            android:entryValues="@array/pref_item_animator_values"
+            android:key="@string/key_item_animator"
+            android:summary="@string/summary_item_animator"
+            android:title="@string/title_item_animator" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/title_item_decoration"
+            android:entries="@array/pref_item_decoration_entries"
+            android:entryValues="@array/pref_item_decoration_values"
+            android:key="@string/key_item_decoration"
+            android:summary="@string/summary_item_decoration"
+            android:title="@string/title_item_decoration" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

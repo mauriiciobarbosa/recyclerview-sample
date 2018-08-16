@@ -1,0 +1,31 @@
+<?xmlxml  versionversion=="1.0""1.0"  encodingencoding=="utf-8""utf-8"?>
+<resources>
+    <string-array name="pref_layout_manager_entries">
+        <item>LinearLayoutManager</item>
+        <item>GridLayoutManager</item>
+        <item>StaggeredLayoutManager</item>
+    </string-array>
+    <string-array name="pref_layout_manager_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="pref_item_animator_entries">
+        <item>none</item>
+        <item>DefaultAnimator</item>
+        <item>CustomAnimator</item>
+    </string-array>
+    <string-array name="pref_item_animator_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="pref_item_decoration_entries">
+        <item>DividerItemDecoration</item>
+        <item>CustomDecoration</item>
+    </string-array>
+    <string-array name="pref_item_decoration_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
